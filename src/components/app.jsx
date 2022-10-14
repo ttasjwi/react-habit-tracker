@@ -18,16 +18,26 @@ class App extends Component {
         return (
             <>
                 <Navbar
-                    totalCount={this.state.habits.filter(item => item.count > 0).length}
+                    totalCount={
+                        this.state.habits
+                            .filter(item => item.count > 0)
+                            .length
+                    }
                 />
                 <Habits
                     habits={this.state.habits}
+                    onAdd={this.handleAdd}
                     onIncrement={this.handleIncrement}
                     onDecrement={this.handleDecrement}
                     onDelete={this.handleDelete}
                 />
             </>
         );
+    }
+
+    handleAdd = (name) => {
+        const habits = [...this.state.habits, {id: Date.now(), name, count: 0}];
+        this.setState({habits});
     }
 
     handleIncrement = (habit) => {

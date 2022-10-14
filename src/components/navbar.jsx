@@ -5,7 +5,7 @@ class Navbar extends Component {
     render() {
 
         return (
-            <nav>
+            <nav className="navbar">
                 <span>
                     <i className="navbar-logo fa-solid fa-leaf"></i>
                 </span>

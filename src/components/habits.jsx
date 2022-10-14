@@ -5,7 +5,7 @@ class Habits extends Component {
 
     render() {
         return (
-            <ul>
+            <ul className="habits">
                 {
                     this.props.habits.map(habit => (
                             /**
